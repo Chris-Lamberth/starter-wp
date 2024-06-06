@@ -1,0 +1,79 @@
+/*
+	Theme Name: Starter Theme
+	Author: AUTHOR
+	Author URI: http://DOMAIN.com
+	Version: 1.0.0
+	License: GNU General Public License v2 or later
+	License URI: http://www.gnu.org/licenses/gpl-2.0.html
+	Text Domain: CLIENTNAME
+*/
+
+:root {
+	--site-pad: 2rem;
+}
+
+/* 🔸 Reset */
+
+* {
+	box-sizing: border-box;
+	margin: 0;
+	padding: 0;
+}
+
+img {
+	width: 100%;
+	margin: 0;
+}
+button {
+	background: none;
+	border: none;
+	cursor: pointer;
+}
+
+/* 🔸 Typography */
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+ul,
+ol,
+li,
+a,
+q,
+span,
+button,
+input,
+textarea,
+label {
+	font-family: sans-serif;
+}
+
+/* 🔸 Utility */
+
+html {
+	scroll-behavior: smooth;
+}
+.no-scroll {
+	overflow: hidden;
+	width: 100%;
+}
+.container {
+	width: 100%;
+	max-width: calc(1000px + var(--site-pad) + var(--site-pad));
+	margin: 0 auto;
+	padding: 0 var(--site-pad);
+}
+.hidden {
+	position: absolute;
+	width: 1px;
+	height: 1px;
+	margin: -1px;
+	padding: 0;
+	overflow: hidden;
+	clip: rect(0, 0, 0, 0);
+	border: 0;
+}
