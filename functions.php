@@ -73,3 +73,10 @@ add_filter('template_include', 'theme_page_templates');
 function images($path = '') {
 	return get_template_directory_uri() . '/media/images/' . ltrim($path, '/');
 }
+
+//enable webp support
+function enable_webp_uploads($mime_types) {
+    $mime_types['webp'] = 'image/webp';
+    return $mime_types;
+}
+add_filter('upload_mimes', 'enable_webp_uploads');
