@@ -48,7 +48,8 @@ span,
 button,
 input,
 textarea,
-label {
+label,
+cite{
 	font-family: sans-serif;
 }
 
