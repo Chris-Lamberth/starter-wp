@@ -50,7 +50,8 @@ input,
 textarea,
 label,
 cite,
-table{
+table,
+details{
 	font-family: sans-serif;
 }
 
