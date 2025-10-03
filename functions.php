@@ -12,8 +12,8 @@ add_action('after_setup_theme', 'theme_setup');
 
 // Enqueue styles and scripts
 function theme_scripts() {
-	wp_enqueue_style('style', get_template_directory_uri() . '/assets/css/style.css');
-	wp_enqueue_script('scripts', get_template_directory_uri() . '/assets/js/scripts.js', array(), false, true);
+	wp_enqueue_style('style', get_template_directory_uri() . '/style.css');
+	wp_enqueue_script('scripts', get_template_directory_uri() . '/scripts.js', array(), false, true);
 }
 
 add_action('wp_enqueue_scripts', 'theme_scripts');
@@ -46,31 +46,3 @@ remove_action('wp_head', 'rsd_link');
 
 // Remove WordPress version meta tag
 remove_action('wp_head', 'wp_generator');
-
-
-// Load custom templates from the 'pages' folder
-function theme_page_templates($template) {
-	global $post;
-
-	if ($post) {
-		 $template_name = get_post_meta($post->ID, '_wp_page_template', true);
-
-		 if ($template_name && $template_name !== 'default') {
-			  $template_path = get_template_directory() . '/pages/' . $template_name;
-
-			  if (file_exists($template_path)) {
-					return $template_path;
-			  }
-		 }
-	}
-
-	return $template;
-}
-add_filter('template_include', 'theme_page_templates');
-
-
-// Helper function for directories
-function images($path = '') {
-	return get_template_directory_uri() . '/media/images/' . ltrim($path, '/');
-}
-
